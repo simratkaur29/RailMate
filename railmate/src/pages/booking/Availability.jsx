@@ -59,7 +59,7 @@ function StatusPill({ status, seats }) {
 export default function Availability({
   train = DEMO_TRAIN,
   journeyDate = new Date(),
-  onContinue = () => {},
+  onContinue = () => { },
 }) {
   const [selectedClass, setSelectedClass] = useState(null);
   const [activeDateOffset, setActiveDateOffset] = useState(0);
@@ -142,9 +142,8 @@ export default function Availability({
               key={cls.code}
               type="button"
               disabled={isDisabled}
-              className={`classCard ${isSelected ? "is-selected" : ""} ${
-                isDisabled ? "is-disabled" : ""
-              }`}
+              className={`classCard ${isSelected ? "is-selected" : ""} ${isDisabled ? "is-disabled" : ""
+                }`}
               onClick={() => setSelectedClass(cls.code)}
             >
               <div className="classCard__top">
