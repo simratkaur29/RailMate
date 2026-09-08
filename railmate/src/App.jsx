@@ -113,35 +113,32 @@
 //         </div>
 //       </section>
 
-//       <div className="ticks"></div>
-//       <section id="spacer"></section>
-//     </>
-//   )
+
 // }
 
 // export default App
 import { Routes, Route } from "react-router-dom";
 
-import Availability from "./pages/booking/availability";
-import SelectTrain from "./pages/booking/selectTrain";
-import SelectClass from "./pages/booking/selectClass";
-import BookingForm from "./pages/booking/BookingForm";
-import BookingConfirm from "./pages/booking/bookingConfirm";
-import PNRStatus from "./pages/booking/PNRStatus";
-import Cancellation from "./pages/booking/Cancellation";
-import Ticket from "./pages/booking/ticket";
+import Availability from "./pages/booking/availability.jsx";
+import SelectTrain from "./pages/booking/selectTrain.jsx";
+import SelectClass from "./pages/booking/selectClass.jsx";
+import BookingForm from "./pages/booking/BookingForm.jsx";
+import BookingConfirm from "./pages/booking/bookingConfirm.jsx";
+import PNRStatus from "./pages/booking/PNRStatus.jsx";
+import Cancellation from "./pages/booking/Cancellation.jsx";
+import Ticket from "./pages/booking/ticket.jsx";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<selectTrain />} />
-      <Route path="/availability" element={<availability />} />
-      <Route path="/class" element={<selectClass />} />
+      <Route path="/" element={<SelectTrain />} />
+      <Route path="/availability" element={<Availability />} />
+      <Route path="/class" element={<SelectClass />} />
       <Route path="/booking" element={<BookingForm />} />
-      <Route path="/confirm" element={<bookingConfirm />} />
+      <Route path="/confirm" element={<BookingConfirm />} />
       <Route path="/pnr" element={<PNRStatus />} />
       <Route path="/cancel" element={<Cancellation />} />
-      <Route path="/ticket" element={<ticket />} />
+      <Route path="/ticket" element={<Ticket />} />
     </Routes>
   );
 }

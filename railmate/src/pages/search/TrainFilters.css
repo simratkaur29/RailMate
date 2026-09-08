@@ -1,0 +1,218 @@
+.rm-filters-bar {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 14px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e3eaf3;
+  border-radius: 12px;
+
+  box-shadow: 0 3px 10px rgba(20, 45, 80, 0.05);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   RESULT COUNT
+========================================= */
+
+.rm-filters-count {
+  color: #263b57;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   FILTER GROUP
+========================================= */
+
+.rm-filters-group {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =========================================
+   FILTER CHIP
+========================================= */
+
+.rm-filter-chip {
+  height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ef;
+  border-radius: 7px;
+
+  color: #65768b;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  white-space: nowrap;
+}
+
+
+/* Icon */
+
+.rm-filter-chip svg {
+  width: 14px;
+  height: 14px;
+
+  color: #73849a;
+
+  transition: color 0.2s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.rm-filter-chip:hover {
+  border-color: #b9cde5;
+
+  background: #f5f9ff;
+
+  color: #246bd1;
+}
+
+.rm-filter-chip:hover svg {
+  color: #246bd1;
+}
+
+
+/* =========================================
+   ACTIVE FILTER
+========================================= */
+
+.rm-filter-chip--active {
+  background: #246bd1;
+
+  border-color: #246bd1;
+
+  color: #ffffff;
+
+  box-shadow: 0 3px 8px rgba(36, 107, 209, 0.18);
+}
+
+.rm-filter-chip--active svg {
+  color: #ffffff;
+}
+
+
+/* Active hover */
+
+.rm-filter-chip--active:hover {
+  background: #185dbd;
+
+  border-color: #185dbd;
+
+  color: #ffffff;
+}
+
+.rm-filter-chip--active:hover svg {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   DEFAULT BUTTON
+========================================= */
+
+.rm-filter-chip:first-child {
+  color: #53677f;
+}
+
+.rm-filter-chip:first-child:hover {
+  color: #246bd1;
+}
+
+
+/* =========================================
+   SMALL SEPARATOR
+========================================= */
+
+.rm-filters-group::before {
+  content: "";
+
+  width: 1px;
+  height: 20px;
+
+  margin-right: 2px;
+
+  background: #e4eaf1;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .rm-filters-bar {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .rm-filters-group {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 550px) {
+
+  .rm-filters-bar {
+    padding: 14px;
+  }
+
+  .rm-filters-group {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+  }
+
+  .rm-filter-chip {
+    width: 100%;
+  }
+
+  .rm-filters-group::before {
+    display: none;
+  }
+}
