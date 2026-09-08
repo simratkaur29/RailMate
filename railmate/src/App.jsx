@@ -134,14 +134,14 @@ import Ticket from "./pages/booking/ticket";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<SelectTrain />} />
-      <Route path="/availability" element={<Availability />} />
-      <Route path="/class" element={<SelectClass />} />
+      <Route path="/" element={<selectTrain />} />
+      <Route path="/availability" element={<availability />} />
+      <Route path="/class" element={<selectClass />} />
       <Route path="/booking" element={<BookingForm />} />
-      <Route path="/confirm" element={<BookingConfirm />} />
+      <Route path="/confirm" element={<bookingConfirm />} />
       <Route path="/pnr" element={<PNRStatus />} />
       <Route path="/cancel" element={<Cancellation />} />
-      <Route path="/ticket" element={<Ticket />} />
+      <Route path="/ticket" element={<ticket />} />
     </Routes>
   );
 }
