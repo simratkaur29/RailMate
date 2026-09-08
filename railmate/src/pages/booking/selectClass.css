@@ -1,0 +1,453 @@
+/* ==========================================================================
+   RailMate — Select Travel Class
+   Same base palette as the rest of the app:
+     navy #0B1437   blue #2563EB   blue-2 #1D4ED8   sky #EFF4FF
+     ink  #1E293B   slate #64748B  line #E2E8F0     paper #F5F7FA
+   ========================================================================== */
+
+.sc {
+  --navy: #0b1437;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --sky: #eff4ff;
+  --ink: #1e293b;
+  --slate: #64748b;
+  --line: #e2e8f0;
+  --paper: #f5f7fa;
+  --ok: #0f9d6a;
+  --ok-bg: #e8f9f1;
+  --warn: #b45309;
+  --warn-bg: #fef3e0;
+  --wait: #b91c1c;
+  --wait-bg: #fdecec;
+
+  max-width: 920px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+  overflow: hidden;
+}
+
+/* ---------- Route bar ---------- */
+
+.sc__routeBar {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 28px;
+  background: linear-gradient(180deg, var(--navy) 0%, #142055 100%);
+  color: #fff;
+}
+
+.sc__routeCode {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.sc__routeTime {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sc__routeDuration {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 0 4px;
+  position: relative;
+}
+
+.sc__routeDuration::before,
+.sc__routeDuration::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.sc__routeDuration::before {
+  right: 100%;
+}
+
+.sc__routeDuration::after {
+  left: 100%;
+}
+
+/* ---------- Body: two columns ---------- */
+
+.sc__body {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+}
+
+/* ---------- Left: class list ---------- */
+
+.sc__list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-right: 1px solid var(--line);
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+.sc__row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 12px;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.sc__row + .sc__row {
+  margin-top: 2px;
+}
+
+.sc__row:hover {
+  background: var(--paper);
+}
+
+.sc__row.is-selected {
+  background: var(--sky);
+}
+
+.sc__rowRadio {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: #fff;
+  position: relative;
+}
+
+.sc__row.is-selected .sc__rowRadio {
+  border-color: var(--blue);
+}
+
+.sc__row.is-selected .sc__rowRadio::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.sc__rowIcon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--navy);
+  border: 1px solid var(--line);
+}
+
+.sc__row.is-selected .sc__rowIcon {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.sc__rowMain {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sc__rowTop {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.sc__rowCode {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.sc__rowLabel {
+  font-size: 12.5px;
+  color: var(--slate);
+}
+
+.sc__amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sc__amenity {
+  font-size: 10.5px;
+  color: var(--slate);
+  background: #eef1f6;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.sc__row.is-selected .sc__amenity {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--blue-dark);
+}
+
+.sc__rowRight {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.sc__rowFare {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.sc-pill {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.sc-pill--ok {
+  color: var(--ok);
+  background: var(--ok-bg);
+}
+
+.sc-pill--warn {
+  color: var(--warn);
+  background: var(--warn-bg);
+}
+
+.sc-pill--wait {
+  color: var(--wait);
+  background: var(--wait-bg);
+}
+
+.sc-pill--off {
+  color: var(--slate);
+  background: #f1f5f9;
+}
+
+/* ---------- Right: sticky summary panel ---------- */
+
+.sc__summary {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  padding: 22px 20px;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sc__summaryTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.sc__summaryEmpty {
+  font-size: 12.5px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+.sc__summaryClass {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.sc__summaryIcon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc__summaryClassLabel {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.sc__summaryClassCode {
+  display: block;
+  font-size: 11px;
+  color: var(--slate);
+}
+
+/* Passenger stepper */
+
+.sc__passengerControl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.sc__passengerLabel {
+  font-size: 12.5px;
+  color: var(--slate);
+}
+
+.sc__stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sc__stepBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--navy);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.sc__stepBtn:hover:not(:disabled) {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.sc__stepBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.sc__stepValue {
+  min-width: 14px;
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+/* Fare rows */
+
+.sc__summaryFareRows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sc__summaryFareRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--slate);
+}
+
+.sc__summaryFareRow--total {
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.sc__continueBtn {
+  padding: 13px 16px;
+  border-radius: 10px;
+  border: none;
+  background: var(--blue);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.sc__continueBtn:hover {
+  background: var(--blue-dark);
+}
+
+.sc__continueBtn:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .sc__body {
+    grid-template-columns: 1fr;
+  }
+
+  .sc__list {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    max-height: none;
+  }
+
+  .sc__summary {
+    position: static;
+  }
+
+  .sc__row {
+    flex-wrap: wrap;
+  }
+
+  .sc__rowRight {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .sc__routeBar {
+    gap: 8px;
+    padding: 14px 16px;
+  }
+
+  .sc__list,
+  .sc__summary {
+    padding: 14px;
+  }
+}
