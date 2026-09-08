@@ -1,0 +1,507 @@
+/* ==========================================================================
+   RailMate — PNR Status Check
+   Same base palette as the other screens:
+     navy #0B1437   blue #2563EB   blue-2 #1D4ED8   sky #EFF4FF
+     ink  #1E293B   slate #64748B  line #E2E8F0     paper #F5F7FA
+   ========================================================================== */
+
+.pnr {
+  --navy: #0b1437;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --sky: #eff4ff;
+  --ink: #1e293b;
+  --slate: #64748b;
+  --line: #e2e8f0;
+  --paper: #f5f7fa;
+  --ok: #0f9d6a;
+  --ok-bg: #e8f9f1;
+  --warn: #b45309;
+  --warn-bg: #fef3e0;
+  --wait: #b91c1c;
+  --wait-bg: #fdecec;
+  --danger: #dc2626;
+
+  max-width: 720px;
+  margin: 0 auto;
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+}
+
+/* ---------- Search bar ---------- */
+
+.pnr__searchWrap {
+  background: linear-gradient(180deg, var(--navy) 0%, #142055 100%);
+  border-radius: 18px 18px 0 0;
+  padding: 26px 28px;
+}
+
+.pnr__searchForm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 6px 6px 6px 16px;
+  box-shadow: 0 8px 20px rgba(11, 20, 55, 0.25);
+}
+
+.pnr__inputIcon {
+  flex-shrink: 0;
+  color: var(--slate);
+  display: flex;
+}
+
+.pnr__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: transparent;
+  padding: 12px 4px;
+}
+
+.pnr__input::placeholder {
+  letter-spacing: normal;
+  color: #94a3b8;
+}
+
+.pnr__searchBtn {
+  flex-shrink: 0;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  background: var(--blue);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.pnr__searchBtn:hover:not(:disabled) {
+  background: var(--blue-dark);
+}
+
+.pnr__searchBtn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.pnr__searchBtn:disabled {
+  background: #7c96e8;
+  cursor: not-allowed;
+}
+
+.pnr__error {
+  margin: 12px 2px 0;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #fca5a5;
+}
+
+/* ---------- Empty state ---------- */
+
+.pnr__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 48px 28px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 18px 18px;
+}
+
+.pnr__emptyIconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--sky);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.pnr__emptyTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.pnr__emptySub {
+  margin: 0;
+  max-width: 340px;
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+/* ---------- Loading skeleton ---------- */
+
+.pnr__skeleton {
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 18px 18px;
+}
+
+.pnr__skelLine {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #eef1f6 25%, #f7f9fc 37%, #eef1f6 63%);
+  background-size: 400% 100%;
+  animation: pnr-shimmer 1.3s ease infinite;
+  margin-bottom: 10px;
+}
+
+.pnr__skelLine--wide {
+  width: 55%;
+}
+
+.pnr__skelLine--mid {
+  width: 35%;
+}
+
+.pnr__skelBlock {
+  margin-top: 16px;
+  height: 110px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #eef1f6 25%, #f7f9fc 37%, #eef1f6 63%);
+  background-size: 400% 100%;
+  animation: pnr-shimmer 1.3s ease infinite;
+}
+
+@keyframes pnr-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pnr__skelLine,
+  .pnr__skelBlock {
+    animation: none;
+  }
+}
+
+/* ---------- Result shell ---------- */
+
+.pnr__result {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 18px 18px;
+  overflow: hidden;
+}
+
+.pnr__resultHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pnr__resultPnrLabel {
+  display: block;
+  font-size: 11px;
+  color: var(--slate);
+}
+
+.pnr__resultPnr {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Train card ---------- */
+
+.pnr__trainCard {
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pnr__trainRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.pnr__trainName {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.pnr__trainNumber {
+  font-size: 12.5px;
+  color: var(--slate);
+}
+
+.pnr__route {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.pnr__stop {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pnr__stop--end {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.pnr__time {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.pnr__code {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--slate);
+}
+
+.pnr__date {
+  font-size: 11px;
+  color: var(--slate);
+}
+
+.pnr__track {
+  display: flex;
+  align-items: center;
+}
+
+.pnr__line {
+  width: 100%;
+  min-width: 90px;
+  height: 1px;
+  background: var(--line);
+  position: relative;
+}
+
+.pnr__dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+  transform: translateY(-50%);
+}
+
+.pnr__dot--end {
+  left: auto;
+  right: 0;
+}
+
+.pnr__boarding {
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: var(--slate);
+}
+
+.pnr__boarding strong {
+  color: var(--ink);
+}
+
+/* ---------- Passenger table ---------- */
+
+.pnr__passengers {
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pnr__sectionTitle {
+  margin: 0 0 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.pnr__tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.pnr__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.pnr__table thead tr {
+  background: var(--paper);
+}
+
+.pnr__table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--slate);
+  border-bottom: 1px solid var(--line);
+}
+
+.pnr__table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.pnr__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pnr__pname {
+  font-weight: 600;
+}
+
+/* Status pills — 4-tone system for CNF/RAC/WL/other */
+
+.pnr-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pnr-pill--chart {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.pnr-pill--class {
+  background: var(--sky);
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+
+.pnr-pill--ok {
+  color: var(--ok);
+  background: var(--ok-bg);
+}
+
+.pnr-pill--warn {
+  color: var(--warn);
+  background: var(--warn-bg);
+}
+
+.pnr-pill--wait {
+  color: var(--wait);
+  background: var(--wait-bg);
+}
+
+.pnr-pill--off {
+  color: var(--slate);
+  background: #f1f5f9;
+}
+
+/* ---------- Actions ---------- */
+
+.pnr__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px 28px;
+  background: var(--paper);
+}
+
+.pnr__btn {
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.pnr__btn:active {
+  transform: translateY(1px);
+}
+
+.pnr__btn--primary {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+
+.pnr__btn--primary:hover {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+}
+
+.pnr__btn--outline {
+  background: #fff;
+  color: var(--danger);
+  border-color: #f3c6c6;
+}
+
+.pnr__btn--outline:hover {
+  background: #fef2f2;
+}
+
+.pnr__btn--ghost {
+  background: transparent;
+  color: var(--slate);
+}
+
+.pnr__btn--ghost:hover {
+  color: var(--ink);
+  background: #eef1f6;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 520px) {
+  .pnr__searchWrap,
+  .pnr__trainCard,
+  .pnr__passengers,
+  .pnr__actions,
+  .pnr__empty,
+  .pnr__skeleton {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .pnr__searchForm {
+    flex-wrap: wrap;
+  }
+
+  .pnr__searchBtn {
+    width: 100%;
+  }
+
+  .pnr__actions {
+    flex-direction: column-reverse;
+  }
+
+  .pnr__btn {
+    width: 100%;
+    text-align: center;
+  }
+}
