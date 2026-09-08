@@ -121,7 +121,7 @@ function RailwayTips() {
 
       </div>
 
-      {/* Tips */}
+      {}
       <div className="tips-section">
 
         <h2>Travel Tips for You</h2>
