@@ -1,0 +1,375 @@
+/* =================================
+   RailMate - Travel Reviews
+   ================================= */
+
+.travel-reviews-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 40px 7%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Header ---------- */
+
+.travel-reviews-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.travel-reviews-header h1 {
+  margin: 0;
+  color: #12355b;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.travel-reviews-header p {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ---------- Search & Filter ---------- */
+
+.reviews-controls {
+  max-width: 1000px;
+  margin: 0 auto 35px;
+  display: flex;
+  gap: 15px;
+}
+
+.reviews-search {
+  flex: 1;
+  height: 48px;
+
+  padding: 0 18px;
+  box-sizing: border-box;
+
+  background: white;
+  border: 1px solid #d7dee8;
+  border-radius: 8px;
+
+  color: #1e293b;
+  font-size: 15px;
+
+  outline: none;
+}
+
+.reviews-search:focus {
+  border-color: #1769aa;
+  box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.1);
+}
+
+.reviews-filter {
+  width: 190px;
+  height: 48px;
+
+  padding: 0 14px;
+
+  background: white;
+  border: 1px solid #d7dee8;
+  border-radius: 8px;
+
+  color: #334155;
+  font-size: 15px;
+
+  outline: none;
+  cursor: pointer;
+}
+
+.reviews-filter:focus {
+  border-color: #1769aa;
+}
+
+/* ---------- Reviews Section ---------- */
+
+.reviews-section {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.reviews-section h2,
+.add-review h2 {
+  color: #12355b;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* ---------- Review Grid ---------- */
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ---------- Review Card ---------- */
+
+.review-card {
+  position: relative;
+
+  background: white;
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+
+  padding: 23px;
+
+  box-shadow: 0 4px 15px rgba(18, 53, 91, 0.06);
+
+  overflow: hidden;
+  transition: 0.2s ease;
+}
+
+.review-card::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: #1769aa;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 22px rgba(18, 53, 91, 0.11);
+}
+
+/* ---------- Review Top ---------- */
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 12px;
+}
+
+.review-top h3 {
+  margin: 0 0 5px;
+
+  color: #12355b;
+  font-size: 18px;
+}
+
+.review-route {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.review-date {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* ---------- Rating ---------- */
+
+.review-rating {
+  margin-bottom: 10px;
+
+  color: #f59e0b;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* ---------- Category ---------- */
+
+.review-category {
+  display: inline-block;
+
+  padding: 5px 10px;
+
+  background: #e8f2fb;
+  color: #1769aa;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  margin-bottom: 12px;
+}
+
+/* ---------- Review Text ---------- */
+
+.review-text {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ---------- No Reviews ---------- */
+
+.no-reviews {
+  background: white;
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+
+  padding: 45px 20px;
+
+  text-align: center;
+}
+
+.no-reviews h3 {
+  margin: 0 0 8px;
+  color: #12355b;
+}
+
+.no-reviews p {
+  margin: 0;
+  color: #64748b;
+}
+
+/* ---------- Add Review ---------- */
+
+.add-review {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 28px;
+
+  background: white;
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 15px rgba(18, 53, 91, 0.06);
+}
+
+.add-review > p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ---------- Form ---------- */
+
+.add-review form {
+  margin-top: 20px;
+}
+
+.review-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.add-review input,
+.add-review select,
+.add-review textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  background: #f8fafc;
+
+  border: 1px solid #d7dee8;
+  border-radius: 7px;
+
+  color: #1e293b;
+  font-size: 14px;
+
+  outline: none;
+}
+
+.add-review select {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.add-review textarea {
+  margin-top: 15px;
+  min-height: 120px;
+
+  resize: vertical;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.add-review input:focus,
+.add-review select:focus,
+.add-review textarea:focus {
+  border-color: #1769aa;
+  background: white;
+
+  box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.08);
+}
+
+/* ---------- Submit Button ---------- */
+
+.add-review button {
+  margin-top: 15px;
+
+  padding: 12px 24px;
+
+  background: #1769aa;
+  color: white;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.add-review button:hover {
+  background: #12355b;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .travel-reviews-page {
+    padding: 30px 5%;
+  }
+
+  .travel-reviews-header h1 {
+    font-size: 30px;
+  }
+
+  .reviews-controls {
+    flex-direction: column;
+  }
+
+  .reviews-filter {
+    width: 100%;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .travel-reviews-page {
+    padding: 25px 4%;
+  }
+
+  .travel-reviews-header h1 {
+    font-size: 26px;
+  }
+
+  .review-card,
+  .add-review {
+    padding: 20px;
+  }
+
+  .review-top {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

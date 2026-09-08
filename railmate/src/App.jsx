@@ -117,6 +117,35 @@
 // }
 
 // export default App
+import RailwayTips from "./pages/community/RailwayTips";
+
+<Route
+  path="/community/tips"
+  element={<RailwayTips />}
+/>
+
+import TravelReviews from "./pages/community/TravelReviews";
+
+<Route
+  path="/community/reviews"
+  element={<TravelReviews />}
+/>
+
+import Community from "./pages/community/community";
+
+<Route
+  path="/community"
+  element={<Community />}
+/>
+
+import Help from "./pages/community/Help";
+
+<Route
+  path="/community/help"
+  element={<Help />}
+/>
+
+
 import { Routes, Route } from "react-router-dom";
 
 import Availability from "./pages/booking/availability.jsx";

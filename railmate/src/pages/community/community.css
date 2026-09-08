@@ -1,0 +1,255 @@
+/* =================================
+   RailMate - Community Page
+   ================================= */
+
+.community-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 40px 7%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Header ---------- */
+
+.community-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 40px;
+}
+
+.community-header h1 {
+  margin: 0;
+
+  color: #12355b;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.community-header p {
+  margin-top: 12px;
+
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ---------- Community Grid ---------- */
+
+.community-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* ---------- Community Card ---------- */
+
+.community-card {
+  position: relative;
+
+  display: block;
+
+  padding: 28px;
+
+  background: white;
+
+  border: 1px solid #e1e7ef;
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  box-shadow: 0 4px 15px rgba(18, 53, 91, 0.06);
+
+  overflow: hidden;
+
+  transition: 0.25s ease;
+}
+
+.community-card::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 5px;
+  height: 100%;
+
+  background: #1769aa;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 25px rgba(18, 53, 91, 0.12);
+
+  border-color: #cbd5e1;
+}
+
+/* ---------- Icon ---------- */
+
+.community-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  background: #e8f2fb;
+
+  border-radius: 10px;
+
+  font-size: 27px;
+}
+
+/* ---------- Card Heading ---------- */
+
+.community-card h2 {
+  margin: 0 0 10px;
+
+  color: #12355b;
+  font-size: 21px;
+}
+
+/* ---------- Card Description ---------- */
+
+.community-card p {
+  margin: 0 0 18px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ---------- Card Link ---------- */
+
+.community-link {
+  color: #1769aa;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.community-card:hover .community-link {
+  color: #12355b;
+}
+
+/* ---------- Information Section ---------- */
+
+.community-info {
+  max-width: 1000px;
+
+  margin: 40px auto 0;
+
+  padding: 30px;
+
+  background: white;
+
+  border: 1px solid #e1e7ef;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 15px rgba(18, 53, 91, 0.06);
+
+  text-align: center;
+}
+
+.community-info h2 {
+  margin: 0 0 10px;
+
+  color: #12355b;
+  font-size: 24px;
+}
+
+.community-info > p {
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ---------- Feature Section ---------- */
+
+.community-features {
+  margin-top: 28px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.community-features div {
+  padding: 18px 12px;
+
+  background: #f7f9fc;
+
+  border: 1px solid #e8edf3;
+  border-radius: 8px;
+}
+
+.community-features strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #12355b;
+  font-size: 14px;
+}
+
+.community-features span {
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .community-page {
+    padding: 30px 5%;
+  }
+
+  .community-header h1 {
+    font-size: 31px;
+  }
+
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .community-page {
+    padding: 25px 4%;
+  }
+
+  .community-header h1 {
+    font-size: 27px;
+  }
+
+  .community-card {
+    padding: 22px;
+  }
+
+  .community-info {
+    padding: 22px;
+  }
+
+  .community-features {
+    grid-template-columns: 1fr;
+  }
+}

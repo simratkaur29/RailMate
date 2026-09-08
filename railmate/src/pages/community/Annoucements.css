@@ -1,0 +1,144 @@
+.announcements-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: #f5f7fa;
+}
+
+.announcements-header {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.announcements-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.announcements-header p {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.announcement-controls {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.announcement-controls input {
+  flex: 1;
+  padding: 13px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.announcement-controls input:focus {
+  border-color: #2563eb;
+}
+
+.announcement-controls select {
+  padding: 13px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.announcements-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.announcement-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.announcement-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.announcement-category {
+  padding: 6px 12px;
+  background: #e8f0ff;
+  color: #2563eb;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.announcement-date {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.announcement-card h2 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 22px;
+}
+
+.announcement-card p {
+  margin-bottom: 18px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.announcement-train {
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 14px;
+}
+
+.no-announcements {
+  background: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.no-announcements h2 {
+  color: #374151;
+}
+
+.no-announcements p {
+  color: #6b7280;
+}
+
+@media (max-width: 700px) {
+  .announcements-page {
+    padding: 20px;
+  }
+
+  .announcements-header h1 {
+    font-size: 28px;
+  }
+
+  .announcement-controls {
+    flex-direction: column;
+  }
+
+  .announcement-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
