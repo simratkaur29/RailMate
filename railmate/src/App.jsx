@@ -122,14 +122,14 @@
 // export default App
 import { Routes, Route } from "react-router-dom";
 
-import Availability from "./pages/booking/availability";
-import SelectTrain from "./pages/booking/selectTrain";
-import SelectClass from "./pages/booking/selectClass";
-import BookingForm from "./pages/booking/BookingForm";
-import BookingConfirm from "./pages/booking/bookingConfirm";
-import PNRStatus from "./pages/booking/PNRStatus";
-import Cancellation from "./pages/booking/Cancellation";
-import Ticket from "./pages/booking/ticket";
+import Availability from "./pages/booking/availability.jsx";
+import SelectTrain from "./pages/booking/selectTrain.jsx";
+import SelectClass from "./pages/booking/selectClass.jsx";
+import BookingForm from "./pages/booking/BookingForm.jsx";
+import BookingConfirm from "./pages/booking/bookingConfirm.jsx";
+import PNRStatus from "./pages/booking/PNRStatus.jsx";
+import Cancellation from "./pages/booking/Cancellation.jsx";
+import Ticket from "./pages/booking/ticket.jsx";
 
 function App() {
   return (
