@@ -122,7 +122,7 @@
 // export default App
 import { Routes, Route } from "react-router-dom";
 
-import Availability from "./pages/booking/availability.jsx";
+import Availability from "./pages/booking/Availability.jsx";
 import SelectTrain from "./pages/booking/selectTrain.jsx";
 import SelectClass from "./pages/booking/selectClass.jsx";
 import BookingForm from "./pages/booking/BookingForm.jsx";
@@ -135,7 +135,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<selectTrain />} />
-      <Route path="/availability" element={<availability />} />
+      <Route path="/availability" element={<Availability />} />
       <Route path="/class" element={<selectClass />} />
       <Route path="/booking" element={<BookingForm />} />
       <Route path="/confirm" element={<bookingConfirm />} />
