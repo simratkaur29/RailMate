@@ -318,7 +318,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* JOURNEY SUMMARY */}
+            {}
             <div className="rm-widget-card">
               <h3>Journey Summary</h3>
               <div className="rm-stat-list">
