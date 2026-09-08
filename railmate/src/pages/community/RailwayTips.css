@@ -1,0 +1,284 @@
+/* =================================
+   RailMate - Railway Travel Tips
+   ================================= */
+
+.railway-tips-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 40px 7%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Header ---------- */
+
+.railway-tips-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.railway-tips-header h1 {
+  margin: 0;
+  color: #12355b;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.railway-tips-header p {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ---------- Search & Filter ---------- */
+
+.tips-controls {
+  max-width: 1000px;
+  margin: 0 auto 35px;
+
+  display: flex;
+  gap: 15px;
+}
+
+.tips-search {
+  flex: 1;
+  height: 48px;
+
+  padding: 0 18px;
+  box-sizing: border-box;
+
+  background: white;
+  border: 1px solid #d7dee8;
+  border-radius: 8px;
+
+  color: #1e293b;
+  font-size: 15px;
+
+  outline: none;
+}
+
+.tips-search:focus {
+  border-color: #1769aa;
+  box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.1);
+}
+
+.tips-filter {
+  width: 190px;
+  height: 48px;
+
+  padding: 0 14px;
+
+  background: white;
+  border: 1px solid #d7dee8;
+  border-radius: 8px;
+
+  color: #334155;
+  font-size: 15px;
+
+  outline: none;
+  cursor: pointer;
+}
+
+.tips-filter:focus {
+  border-color: #1769aa;
+}
+
+/* ---------- Section ---------- */
+
+.tips-section {
+  max-width: 1000px;
+  margin: 0 auto 35px;
+}
+
+.tips-section h2 {
+  color: #12355b;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* ---------- Tips Grid ---------- */
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ---------- Tip Card ---------- */
+
+.tip-card {
+  position: relative;
+
+  background: white;
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+
+  padding: 23px;
+
+  box-shadow: 0 4px 15px rgba(18, 53, 91, 0.06);
+
+  overflow: hidden;
+
+  transition: 0.2s ease;
+}
+
+.tip-card::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: #1769aa;
+}
+
+.tip-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 22px rgba(18, 53, 91, 0.11);
+}
+
+/* ---------- Card Top ---------- */
+
+.tip-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 14px;
+}
+
+.tip-category {
+  padding: 5px 11px;
+
+  background: #e8f2fb;
+  color: #1769aa;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tip-number {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* ---------- Card Content ---------- */
+
+.tip-card h3 {
+  margin: 0 0 10px;
+
+  color: #12355b;
+  font-size: 19px;
+}
+
+.tip-card p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ---------- No Results ---------- */
+
+.no-tips {
+  background: white;
+
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+
+  padding: 45px 20px;
+
+  text-align: center;
+}
+
+.no-tips h3 {
+  margin: 0 0 8px;
+
+  color: #12355b;
+  font-size: 20px;
+}
+
+.no-tips p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ---------- Travel Reminder ---------- */
+
+.travel-reminder {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 25px 28px;
+
+  background: #12355b;
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.travel-reminder h2 {
+  margin: 0 0 8px;
+
+  color: white;
+  font-size: 22px;
+}
+
+.travel-reminder p {
+  margin: 0;
+
+  color: #dbeafe;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .railway-tips-page {
+    padding: 30px 5%;
+  }
+
+  .railway-tips-header h1 {
+    font-size: 30px;
+  }
+
+  .tips-controls {
+    flex-direction: column;
+  }
+
+  .tips-filter {
+    width: 100%;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .railway-tips-page {
+    padding: 25px 4%;
+  }
+
+  .railway-tips-header h1 {
+    font-size: 26px;
+  }
+
+  .tip-card {
+    padding: 20px;
+  }
+
+  .travel-reminder {
+    padding: 22px 18px;
+  }
+}

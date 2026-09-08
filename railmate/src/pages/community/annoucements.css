@@ -1,0 +1,240 @@
+/* ================================
+   RailMate - Announcements Page
+   ================================ */
+
+.announcements-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 40px 7%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Header ---------- */
+
+.announcements-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.announcements-header h1 {
+  margin: 0;
+  color: #12355b;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.announcements-header p {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* ---------- Search & Filter Section ---------- */
+
+.announcement-controls {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.announcement-search {
+  flex: 1;
+  height: 48px;
+  padding: 0 18px;
+  border: 1px solid #d7dee8;
+  border-radius: 8px;
+  background: white;
+  color: #1e293b;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.announcement-search:focus {
+  border-color: #1769aa;
+  box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.1);
+}
+
+.announcement-filter {
+  height: 48px;
+  min-width: 190px;
+  padding: 0 15px;
+  border: 1px solid #d7dee8;
+  border-radius: 8px;
+  background: white;
+  color: #334155;
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+.announcement-filter:focus {
+  border-color: #1769aa;
+}
+
+/* ---------- Announcement Grid ---------- */
+
+.announcements-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* ---------- Announcement Card ---------- */
+
+.announcement-card {
+  background: white;
+  border: 1px solid #e1e7ef;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(18, 53, 91, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.announcement-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: #1769aa;
+}
+
+.announcement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(18, 53, 91, 0.12);
+}
+
+/* ---------- Card Top ---------- */
+
+.announcement-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.announcement-category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #e8f2fb;
+  color: #1769aa;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.announcement-date {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* ---------- Title ---------- */
+
+.announcement-card h2 {
+  margin: 0 0 10px;
+  color: #12355b;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+/* ---------- Description ---------- */
+
+.announcement-description {
+  margin: 0 0 18px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ---------- Train Information ---------- */
+
+.announcement-train {
+  padding: 12px 14px;
+  background: #f7f9fc;
+  border-radius: 7px;
+  border: 1px solid #e8edf3;
+  color: #475569;
+  font-size: 13px;
+}
+
+.announcement-train strong {
+  color: #12355b;
+}
+
+/* ---------- Empty State ---------- */
+
+.no-announcements {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 50px 20px;
+  text-align: center;
+  background: white;
+  border: 1px solid #e1e7ef;
+  border-radius: 12px;
+  color: #64748b;
+}
+
+.no-announcements h3 {
+  margin-bottom: 8px;
+  color: #12355b;
+  font-size: 20px;
+}
+
+.no-announcements p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 768px) {
+  .announcements-page {
+    padding: 30px 5%;
+  }
+
+  .announcements-header h1 {
+    font-size: 30px;
+  }
+
+  .announcement-controls {
+    flex-direction: column;
+  }
+
+  .announcement-search,
+  .announcement-filter {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .announcements-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .announcements-page {
+    padding: 25px 4%;
+  }
+
+  .announcements-header h1 {
+    font-size: 26px;
+  }
+
+  .announcement-card {
+    padding: 20px;
+  }
+
+  .announcement-top {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+}
