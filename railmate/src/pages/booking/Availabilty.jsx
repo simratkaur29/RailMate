@@ -189,6 +189,6 @@ export default function Availability({
           Continue to Passenger Details
         </button>
       </footer>
-     </div>
+    </div>
   );
 }
