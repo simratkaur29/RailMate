@@ -122,7 +122,7 @@
 // export default App
 import { Routes, Route } from "react-router-dom";
 
-import Availability from "./pages/booking/Availability.jsx";
+import Availability from "./pages/booking/availability.jsx";
 import SelectTrain from "./pages/booking/selectTrain.jsx";
 import SelectClass from "./pages/booking/selectClass.jsx";
 import BookingForm from "./pages/booking/BookingForm.jsx";
