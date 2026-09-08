@@ -1,0 +1,631 @@
+.travel-assistant {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e3eaf3;
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 22px;
+  box-shadow: 0 3px 12px rgba(20, 45, 80, 0.06);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.assistant-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.assistant-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: #eaf3ff;
+  color: #1769d5;
+
+  font-size: 23px;
+}
+
+.assistant-label {
+  display: block;
+
+  color: #1769d5;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  margin-bottom: 4px;
+}
+
+.assistant-header h2 {
+  margin: 0;
+
+  color: #172b46;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.assistant-header p {
+  margin: 5px 0 0;
+
+  color: #7a8799;
+  font-size: 11px;
+}
+
+
+/* =========================================
+   JOURNEY REMINDER
+========================================= */
+
+.journey-reminder {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 18px;
+  padding: 14px 16px;
+
+  background: #f1f7ff;
+  border: 1px solid #dcecff;
+  border-radius: 10px;
+}
+
+.reminder-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border-radius: 9px;
+
+  font-size: 18px;
+}
+
+.journey-reminder strong {
+  display: block;
+
+  color: #193553;
+  font-size: 12px;
+  font-weight: 700;
+
+  margin-bottom: 4px;
+}
+
+.journey-reminder p {
+  margin: 0;
+
+  color: #6d7d92;
+  font-size: 11px;
+}
+
+
+/* =========================================
+   INFORMATION CARDS
+========================================= */
+
+.assistant-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.assistant-info-card {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4eaf2;
+  border-radius: 10px;
+
+  transition: 0.2s ease;
+}
+
+.assistant-info-card:hover {
+  border-color: #c8dcf5;
+  box-shadow: 0 3px 10px rgba(28, 93, 170, 0.08);
+}
+
+.info-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #edf5ff;
+
+  border-radius: 9px;
+
+  font-size: 17px;
+}
+
+.assistant-info-card span {
+  display: block;
+
+  color: #8a96a7;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+}
+
+.assistant-info-card strong {
+  display: block;
+
+  color: #20334d;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  margin-top: 4px;
+}
+
+.assistant-info-card small {
+  display: block;
+
+  color: #8a96a7;
+
+  font-size: 9px;
+
+  margin-top: 3px;
+}
+
+
+/* =========================================
+   JOURNEY ROUTE
+========================================= */
+
+.route-section {
+  margin-top: 22px;
+}
+
+.route-section h3,
+.instructions-section h3 {
+  margin: 0 0 12px;
+
+  color: #1a2e49;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.route {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-items: center;
+
+  padding: 18px;
+
+  background: #fafcff;
+
+  border: 1px solid #e5ebf3;
+  border-radius: 10px;
+}
+
+.route-station {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.station-dot {
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+
+  background: #1769d5;
+
+  border: 3px solid #dcecff;
+
+  border-radius: 50%;
+}
+
+.route-station span {
+  display: block;
+
+  color: #8995a6;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+}
+
+.route-station strong {
+  display: block;
+
+  color: #1d304a;
+
+  font-size: 13px;
+
+  margin-top: 4px;
+}
+
+.route-station small {
+  display: block;
+
+  color: #1769d5;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  margin-top: 3px;
+}
+
+
+/* Route connecting line */
+
+.route-line {
+  position: relative;
+
+  text-align: center;
+}
+
+.route-line::before {
+  content: "";
+
+  position: absolute;
+
+  left: 12%;
+  right: 12%;
+  top: 50%;
+
+  border-top: 1px dashed #b8c6d8;
+}
+
+.route-line span {
+  position: relative;
+
+  display: inline-block;
+
+  background: #fafcff;
+
+  padding: 0 10px;
+
+  color: #7c899c;
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   BOARDING INFORMATION
+========================================= */
+
+.boarding-section {
+  margin-top: 18px;
+
+  padding: 18px;
+
+  background: #f8fbff;
+
+  border: 1px solid #deebfa;
+  border-radius: 10px;
+}
+
+.boarding-header {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.boarding-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e2ebf6;
+  border-radius: 9px;
+
+  font-size: 17px;
+}
+
+.boarding-header h3 {
+  margin: 0;
+
+  color: #1c304a;
+
+  font-size: 13px;
+}
+
+.boarding-header p {
+  margin: 4px 0 0;
+
+  color: #7b899c;
+
+  font-size: 10px;
+}
+
+
+/* Boarding details */
+
+.boarding-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 15px;
+}
+
+.boarding-details div {
+  background: #ffffff;
+
+  padding: 12px;
+
+  border: 1px solid #e3eaf3;
+  border-radius: 8px;
+}
+
+.boarding-details span {
+  display: block;
+
+  color: #8a96a7;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+
+  margin-bottom: 5px;
+}
+
+.boarding-details strong {
+  color: #1769d5;
+
+  font-size: 11px;
+}
+
+
+/* Boarding message */
+
+.boarding-message {
+  margin-top: 12px;
+
+  padding: 11px 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4ebf3;
+  border-radius: 8px;
+
+  color: #68788d;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   IMPORTANT INSTRUCTIONS
+========================================= */
+
+.instructions-section {
+  margin-top: 22px;
+}
+
+.instruction-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.instruction {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5eaf1;
+  border-radius: 8px;
+}
+
+.instruction span {
+  width: 23px;
+  height: 23px;
+  min-width: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eaf3ff;
+
+  color: #1769d5;
+
+  border-radius: 50%;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.instruction p {
+  margin: 2px 0 0;
+
+  color: #66778c;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   QUICK JOURNEY SUMMARY
+========================================= */
+
+.quick-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 20px;
+  padding-top: 17px;
+
+  border-top: 1px solid #e7ecf2;
+}
+
+.quick-summary div {
+  padding-left: 15px;
+
+  border-right: 1px solid #e4eaf1;
+}
+
+.quick-summary div:first-child {
+  padding-left: 0;
+}
+
+.quick-summary div:last-child {
+  border-right: none;
+}
+
+.quick-summary span {
+  display: block;
+
+  color: #8a96a7;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+
+  margin-bottom: 5px;
+}
+
+.quick-summary strong {
+  color: #21344e;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-assistant {
+  text-align: center;
+
+  padding: 35px 20px;
+}
+
+.empty-assistant .assistant-icon {
+  margin: 0 auto 13px;
+}
+
+.empty-assistant h2 {
+  margin: 0 0 7px;
+
+  color: #1c304a;
+
+  font-size: 18px;
+}
+
+.empty-assistant p {
+  margin: 0;
+
+  color: #7d899b;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .assistant-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-summary {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 15px;
+  }
+
+  .quick-summary div:nth-child(2) {
+    border-right: none;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .travel-assistant {
+    padding: 18px;
+  }
+
+  .assistant-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .route-line {
+    display: none;
+  }
+
+  .instruction-list {
+    grid-template-columns: 1fr;
+  }
+
+  .boarding-details {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-summary {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .quick-summary div {
+    padding-left: 0;
+    border-right: none;
+  }
+}
