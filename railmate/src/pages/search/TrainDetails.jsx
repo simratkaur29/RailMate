@@ -3,12 +3,9 @@ import { IconClose, IconTrain, IconClock, IconMap, IconTicket, IconStar } from "
 import { formatDuration } from "./mockData";
 import "./TrainDetails.css";
 
-/**
  * TrainDetails
  * Slide-over panel with the full breakdown for one train: class-wise
  * fares & availability, platform/boarding info, and amenities.
- * Renders nothing if `train` is null, so it's safe to mount always.
- */
 export default function TrainDetails({ train, onClose, onBook }) {
   if (!train) return null;
 

@@ -10,11 +10,6 @@ const CLASS_OPTIONS = [
   { value: "CC", label: "Chair Car (CC)" },
 ];
 
-/**
- * TrainSearch
- * Collects From / To / Journey Date / Class and hands a clean
- * search object back to the parent via onSearch.
- */
 export default function TrainSearch({ onSearch }) {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
